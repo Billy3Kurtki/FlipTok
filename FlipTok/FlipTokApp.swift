@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct FlipTokApp: App {
     
-    //MARK: - UI
+    // MARK: - UI
     
     var body: some Scene {
         WindowGroup {

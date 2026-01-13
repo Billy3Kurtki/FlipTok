@@ -9,16 +9,14 @@ import SwiftUI
 
 struct MainTabView: View {
     
-    //MARK: - Properties
+    // MARK: - Properties
     
-    @State private var selectedTab: Int = 0
+    @State private var selectedTab: Int = 1
     
+    // MARK: - UI
     
-    //MARK: - UI
-
     var body: some View {
         TabView(selection: $selectedTab) {
-            
             FeedView()
                 .tabItem {
                     VStack {
@@ -28,6 +26,7 @@ struct MainTabView: View {
                     }
                 }
                 .tag(1)
+            
             ShopView()
                 .tabItem {
                     VStack {
@@ -37,6 +36,7 @@ struct MainTabView: View {
                     }
                 }
                 .tag(2)
+            
             CreateVideoView()
                 .tabItem {
                     VStack {
@@ -45,6 +45,7 @@ struct MainTabView: View {
                     }
                 }
                 .tag(3)
+            
             MessagesView()
                 .tabItem {
                     VStack {
@@ -54,12 +55,13 @@ struct MainTabView: View {
                     }
                 }
                 .tag(4)
+            
             ProfileView()
                 .tabItem {
                     VStack {
                         Image(systemName: "person")
                             .environment(\.symbolVariants, selectedTab == 5 ? .fill : .none)
-                            Text("Профиль")
+                        Text("Профиль")
                     }
                 }
                 .tag(5)
