@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    //MARK: - UI
+    
     var body: some View {
-        
+        MainTabView()
     }
 }
 

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct FeedView: View {
+    
+    //MARK: - UI
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
