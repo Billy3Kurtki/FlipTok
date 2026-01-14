@@ -33,7 +33,7 @@ struct MainTabView: View {
     }
 }
 
-// MARK: - MainTabs
+    // MARK: - MainTabs
 
 enum MainTabs: CaseIterable {
     
@@ -43,7 +43,7 @@ enum MainTabs: CaseIterable {
     case messages
     case profile
     
-// MARK: - Properties
+    // MARK: - Properties
     
     @ViewBuilder
     var contentView: some View {
@@ -58,31 +58,31 @@ enum MainTabs: CaseIterable {
     
     var tabName: String {
         switch self {
-        case .feed: return "Главная"
-        case .friends: return "Друзья"
-        case .createVideo: return ""
-        case .messages: return "Сообщения"
-        case .profile: return "Профиль"
+        case .feed: "Главная"
+        case .friends: "Друзья"
+        case .createVideo: ""
+        case .messages: "Сообщения"
+        case .profile: "Профиль"
         }
     }
     
     var tabIconName: String {
         switch self {
-        case .feed: return "house"
-        case .friends: return "person.2"
-        case .createVideo: return "plus.rectangle"
-        case .messages: return "message"
-        case .profile: return "person"
+        case .feed: "house"
+        case .friends: "person.2"
+        case .createVideo: "plus.rectangle"
+        case .messages: "message"
+        case .profile: "person"
         }
     }
     
     var index: Int {
         switch self {
-        case .feed: return 1
-        case .friends: return 2
-        case .createVideo: return 3
-        case .messages: return 4
-        case .profile: return 5
+        case .feed: 1
+        case .friends: 2
+        case .createVideo: 3
+        case .messages: 4
+        case .profile: 5
         }
     }
 }
