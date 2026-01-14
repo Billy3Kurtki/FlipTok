@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ShopView: View {
+struct FriendsView: View {
    
     // MARK: - UI
     
@@ -17,5 +17,5 @@ struct ShopView: View {
 }
 
 #Preview {
-    ShopView()
+    FriendsView()
 }
