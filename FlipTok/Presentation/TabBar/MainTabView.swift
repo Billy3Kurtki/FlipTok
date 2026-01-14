@@ -33,7 +33,7 @@ struct MainTabView: View {
     }
 }
 
-    // MARK: - MainTabs
+// MARK: - MainTabs
 
 enum MainTabs: CaseIterable {
     
