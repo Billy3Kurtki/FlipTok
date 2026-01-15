@@ -8,6 +8,7 @@
 import SwiftUI
 
 enum Const {
+    
     static let tabItemVspacing: CGFloat = 4
 }
 
@@ -15,8 +16,7 @@ struct MainTabView: View {
     
     // MARK: - Properties
     
-    @State private var selectedTab: MainTabs = MainTabs.feed
-    let spacing: CGFloat = 10
+    @State private var selectedTab: MainTabs = .feed
     
     // MARK: - UI
     
@@ -26,7 +26,7 @@ struct MainTabView: View {
     
     private var contentView: some View {
         TabView(selection: $selectedTab) {
-            ForEach(MainTabs.allCases, id: \.self) { tab in
+            ForEach(MainTabs.allCases) { tab in
                 tab.destination
                     .tabItem {
                         tabItemView(with: tab)
@@ -37,31 +37,28 @@ struct MainTabView: View {
         .tint(.black)
     }
     
-   private func tabItemView(with tab: MainTabs) -> some View {
+    private func tabItemView(with tab: MainTabs) -> some View {
         VStack(spacing: Const.tabItemVspacing) {
             Image(systemName: tab.tabIconName)
                 .environment(\.symbolVariants, selectedTab == tab ? .fill : .none)
             Text(tab.tabName)
         }
     }
-    
 }
 
 // MARK: - MainTabs
 
 enum MainTabs: CaseIterable, Identifiable {
-   
+    
     case feed
     case friends
     case createVideo
     case messages
     case profile
     
-    var id: MainTabs {
-        self
-    }
-    
     // MARK: - Properties
+    
+    var id: MainTabs { self }
     
     var tabName: String {
         switch self {
