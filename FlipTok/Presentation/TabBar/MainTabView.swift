@@ -7,54 +7,61 @@
 
 import SwiftUI
 
+enum Const {
+    static let tabItemVspacing: CGFloat = 4
+}
+
 struct MainTabView: View {
     
     // MARK: - Properties
     
-    @State private var selectedTab: Int = MainTabs.feed.index
+    @State private var selectedTab: MainTabs = MainTabs.feed
+    let spacing: CGFloat = 10
     
     // MARK: - UI
     
     var body: some View {
+        contentView
+    }
+    
+    private var contentView: some View {
         TabView(selection: $selectedTab) {
             ForEach(MainTabs.allCases, id: \.self) { tab in
-                tab.contentView
+                tab.destination
                     .tabItem {
-                        VStack {
-                            Image(systemName: tab.tabIconName)
-                                .environment(\.symbolVariants, selectedTab == tab.index ? .fill : .none)
-                            Text(tab.tabName)
-                        }
+                        tabItemView(with: tab)
                     }
-                    .tag(tab.index)
+                    .tag(tab)
             }
         }
         .tint(.black)
     }
+    
+   private func tabItemView(with tab: MainTabs) -> some View {
+        VStack(spacing: Const.tabItemVspacing) {
+            Image(systemName: tab.tabIconName)
+                .environment(\.symbolVariants, selectedTab == tab ? .fill : .none)
+            Text(tab.tabName)
+        }
+    }
+    
 }
 
 // MARK: - MainTabs
 
-enum MainTabs: CaseIterable {
-    
+enum MainTabs: CaseIterable, Identifiable {
+   
     case feed
     case friends
     case createVideo
     case messages
     case profile
     
-    // MARK: - Properties
-    
-    @ViewBuilder
-    var contentView: some View {
-        switch self {
-        case .feed: FeedView()
-        case .friends: FriendsView()
-        case .createVideo: CreateVideoView()
-        case .messages: MessagesView()
-        case .profile: ProfileView()
-        }
+    var id: MainTabs {
+        self
     }
+    
+    // MARK: - Properties
     
     var tabName: String {
         switch self {
@@ -76,13 +83,16 @@ enum MainTabs: CaseIterable {
         }
     }
     
-    var index: Int {
+    // MARK: - UI
+    
+    @ViewBuilder
+    var destination: some View {
         switch self {
-        case .feed: 1
-        case .friends: 2
-        case .createVideo: 3
-        case .messages: 4
-        case .profile: 5
+        case .feed: FeedView()
+        case .friends: FriendsView()
+        case .createVideo: CreateVideoView()
+        case .messages: MessagesView()
+        case .profile: ProfileView()
         }
     }
 }
