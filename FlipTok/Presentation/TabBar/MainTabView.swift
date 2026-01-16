@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-enum Const {
+ private enum Const {
     
-    static let tabItemVspacing: CGFloat = 4
+    static let tabItemVSpacing: CGFloat = 4
 }
 
 struct MainTabView: View {
@@ -38,7 +38,7 @@ struct MainTabView: View {
     }
     
     private func tabItemView(with tab: MainTabs) -> some View {
-        VStack(spacing: Const.tabItemVspacing) {
+        VStack(spacing: Const.tabItemVSpacing) {
             Image(systemName: tab.tabIconName)
                 .environment(\.symbolVariants, selectedTab == tab ? .fill : .none)
             Text(tab.tabName)
