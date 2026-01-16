@@ -7,12 +7,15 @@
 
 import SwiftUI
 
-struct ShopView: View {
+struct FriendsView: View {
+   
+    // MARK: - UI
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    ShopView()
+    FriendsView()
 }

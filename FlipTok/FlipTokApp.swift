@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct FlipTokApp: App {
+    
+    // MARK: - UI
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
