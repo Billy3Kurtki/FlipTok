@@ -11,7 +11,7 @@ enum TabBarViewTabs: CaseIterable, Identifiable {
     
     case feed
     case friends
-    case createVideo
+    case makeContent
     case messages
     case profile
     
@@ -23,7 +23,7 @@ enum TabBarViewTabs: CaseIterable, Identifiable {
         switch self {
         case .feed:        "Главная"
         case .friends:     "Друзья"
-        case .createVideo: ""
+        case .makeContent: ""
         case .messages:    "Сообщения"
         case .profile:     "Профиль"
         }
@@ -33,7 +33,7 @@ enum TabBarViewTabs: CaseIterable, Identifiable {
         switch self {
         case .feed:        "house"
         case .friends:     "person.2"
-        case .createVideo: "plus.rectangle"
+        case .makeContent: "plus.rectangle"
         case .messages:    "message"
         case .profile:     "person"
         }
@@ -46,7 +46,7 @@ enum TabBarViewTabs: CaseIterable, Identifiable {
         switch self {
         case .feed:        FeedView()
         case .friends:     FriendsView()
-        case .createVideo: CreateVideoView()
+        case .makeContent: MakeContentView()
         case .messages:    MessagesView()
         case .profile:     ProfileView()
         }

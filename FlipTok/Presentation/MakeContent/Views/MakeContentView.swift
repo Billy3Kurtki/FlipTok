@@ -1,5 +1,5 @@
 //
-//  CreateVideoView.swift
+//  MakeContentView.swift
 //  FlipTok
 //
 //  Created by Dima on 13.01.2026.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreateVideoView: View {
+struct MakeContentView: View {
   
     // MARK: - UI
     
@@ -17,5 +17,5 @@ struct CreateVideoView: View {
 }
 
 #Preview {
-    CreateVideoView()
+    MakeContentView()
 }
