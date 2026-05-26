@@ -34,7 +34,7 @@ struct TabBarView: View {
                     .tag(tab)
             }
         }
-        .tint(.defaultBlack)
+        .tint(.ftTextPrimary)
     }
     
     private func tabItemView(with tab: TabBarViewTabs) -> some View {
