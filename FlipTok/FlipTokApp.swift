@@ -10,6 +10,9 @@ import SwiftUI
 @main
 struct FlipTokApp: App {
     
+    // Dependencies
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     // MARK: - UI
     
     var body: some Scene {
