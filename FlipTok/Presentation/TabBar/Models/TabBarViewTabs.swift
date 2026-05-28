@@ -19,13 +19,13 @@ enum TabBarViewTabs: CaseIterable, Identifiable {
     
     var id: Self { self }
     
-    var tabName: String {
+    var tabName: LocalizedStringKey {
         switch self {
-        case .feed:        "Главная"
-        case .friends:     "Друзья"
+        case .feed:        "mainPage"
+        case .friends:     "friends"
         case .makeContent: ""
-        case .messages:    "Сообщения"
-        case .profile:     "Профиль"
+        case .messages:    "messages"
+        case .profile:     "profile"
         }
     }
     
